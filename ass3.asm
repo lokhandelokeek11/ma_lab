@@ -1,6 +1,4 @@
-Sure, here's your Assembly Language Program (ALP) with comments explaining each part:
 
-```assembly
 ; Assignment No. : 1
 ; Assignment Name : Write an ALP to find no. of positive / negative elements from 64-bit array 
 ;-------------------------------------------------------------------
