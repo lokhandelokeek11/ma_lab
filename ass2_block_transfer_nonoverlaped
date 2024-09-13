@@ -113,8 +113,29 @@ next_num:
 	Print	space,1
 	pop	rsi              
 	inc	rsi
-	dec	rbp
+	dec	rbp               ;After printing, it pops rsi back and increments it to point to the next byte, repeating this process 5 times (since rbp is set to 5).
 	jnz	next_num
 RET
+
+Disp_8:
+	MOV	RSI,char_ans+1
+	MOV	RCX,2
+	MOV	RBX,16
+
+next_digit:
+	XOR	RDX,RDX
+	DIV	RBX
+	CMP	DL,9
+	JBE	add30
+	ADD	DL,07H
+
+add30:
+	ADD	DL,30H
+	MOV	[RSI],DL
+	DEC	RSI
+	DEC	RCX
+	JNZ	next_digit
+	Print	char_ans,2
+ret
 
 
